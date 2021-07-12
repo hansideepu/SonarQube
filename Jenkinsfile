@@ -1,18 +1,20 @@
 pipeline {
         agent none
         stages {
-          stage("build & SonarQube analysis") {
-            agent any
-            steps {
+          stage("SonarQube analysis") {
+            //agent any
+                  def scannerhome = tool 'SonarQubeScanner 2.8
+            //steps {
               withSonarQubeEnv('SonarQube') {
-                echo 'Hello'
+              //  echo 'Hello'
+                      sh '${scannerHome}/bin/sonar-scanner'
               }
             }
           }
-          stage("Quality Gate") {
-            steps {
-              waitForQualityGate abortPipeline: true
-            }
-          }
-        }
+        //  stage("Quality Gate") {
+          //  steps {
+            //  waitForQualityGate abortPipeline: true
+        //    }
+        //  }
+      //  }
       }
