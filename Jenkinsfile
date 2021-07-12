@@ -5,7 +5,7 @@ pipeline {
             agent any
             steps {
               withSonarQubeEnv('SonarQube') {
-                sh 'Hello'
+                echo 'Hello'
               }
             }
           }
