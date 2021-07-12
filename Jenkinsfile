@@ -3,7 +3,7 @@ pipeline {
         stages {
           stage("SonarQube analysis") {
             //agent any
-                  def scannerhome = tool 'SonarQubeScanner 2.8
+                  def scannerhome = tool 'SonarQubeScanner 2.8'
             //steps {
               withSonarQubeEnv('SonarQube') {
               //  echo 'Hello'
