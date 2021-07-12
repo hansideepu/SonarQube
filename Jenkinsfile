@@ -6,7 +6,7 @@ pipeline {
         sonarQube 'SonarQube Scanner 2.8'
       }
       steps {
-        withSonarQubeEnv('SonarQube Scanner') {
+        withSonarQubeEnv('SonarQube') {
           sh 'sonar-scanner'
         }
       }
